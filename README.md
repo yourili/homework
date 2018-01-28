@@ -1,0 +1,2 @@
+# homework
+first week rush
