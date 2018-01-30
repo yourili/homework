@@ -1,0 +1,24 @@
+<scroll-view scroll-x="true" class="nav">
+<block wx:for="{{nav}}" wx:for-item="nav" wx:key="index">
+  <text class="{{cid==nav.id?'active':''}}" bindtap="loadColumn" data-id="{{nav.id}}">{{nav.name}}</text>
+</block>
+</scroll-view>
+
+<view class="list">
+<block wx:for="{{list}}" wx:key="index" wx:for-item="list">
+<view class="item"></view>
+  <block wx:if="{(list.data.images[0]==null)}">
+    <view class="noimage">
+    <view class="title1">{{list.data.title}}</view>
+    </view>  
+  </block>
+
+  <block wx:if="{(list.data.images[0]!=null)}">
+    <view class="haveimage">
+    <view class="title2">{{list.data.title}}</view>
+    </view>
+    <image class="cover" src="{{list.data.images[0]}}"></image>
+  </block>
+
+</block>
+</view>
